@@ -4,7 +4,7 @@ import asyncHandler from "./asyncHandler.js";
 
 const verifyJwt = asyncHandler(async (req, res, next) => {
   const cookies = req.cookies;
-
+  console.log(cookies);
   if (!cookies?.jwt) return res.status(401).json({ message: "Unauthorized" });
 
   const token = cookies.jwt;
